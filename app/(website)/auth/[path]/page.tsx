@@ -1,6 +1,11 @@
 import { CardHeader, CardTitle } from "@/components/ui/card";
 import { AuthView } from "@daveyplate/better-auth-ui";
 import { authViewPaths } from "@daveyplate/better-auth-ui/server";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Authentication",
+};
 
 export const dynamicParams = false;
 

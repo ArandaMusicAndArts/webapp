@@ -1,5 +1,10 @@
 import { AccountView } from "@daveyplate/better-auth-ui";
 import { accountViewPaths } from "@daveyplate/better-auth-ui/server";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Account",
+};
 
 export const dynamicParams = false;
 
