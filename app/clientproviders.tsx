@@ -16,6 +16,12 @@ export function ClientProviders({ children }: { children: ReactNode }) {
   return (
     <ConvexBetterAuthProvider client={convex} authClient={authClient}>
       <AuthUIProvider
+        emailOTP={true}
+        passkey={true}
+        social={{ providers: ["google"] }}
+        credentials={false}
+        multiSession={false}
+        optimistic={true}
         authClient={authClient}
         navigate={router.push}
         replace={router.replace}
