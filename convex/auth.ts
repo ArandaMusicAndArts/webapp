@@ -27,8 +27,7 @@ export const createAuth = (
     database: authComponent.adapter(ctx),
     // Configure simple, non-verified email/password to get started
     emailAndPassword: {
-      enabled: true,
-      requireEmailVerification: false,
+      enabled: false,
     },
     socialProviders: {
       google: {
