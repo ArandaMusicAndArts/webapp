@@ -1,5 +1,10 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: { default: "Aranda Music and Arts Program", template: "%s | AMA" },
+};
 
 export default function RootLayout({
   children,
