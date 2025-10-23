@@ -36,8 +36,6 @@ interface MenuItem {
 interface Navbar1Props {
   logo?: {
     url: string;
-    src: string;
-    alt: string;
     title: string;
   };
   menu?: MenuItem[];
@@ -46,9 +44,7 @@ interface Navbar1Props {
 const Navbar1 = ({
   logo = {
     url: "/",
-    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg",
-    alt: "logo",
-    title: "Shadcnblocks.com",
+    title: "Aranda Music and Arts",
   },
   menu = [
     { title: "Home", url: "#" },
@@ -131,11 +127,6 @@ const Navbar1 = ({
           <div className="flex items-center gap-6">
             {/* Logo */}
             <Link href={logo.url} className="flex items-center gap-2">
-              <img
-                src={logo.src}
-                className="max-h-8 dark:invert"
-                alt={logo.alt}
-              />
               <span className="text-lg font-semibold tracking-tighter">
                 {logo.title}
               </span>
@@ -156,11 +147,9 @@ const Navbar1 = ({
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href={logo.url} className="flex items-center gap-2">
-              <img
-                src={logo.src}
-                className="max-h-8 dark:invert"
-                alt={logo.alt}
-              />
+              <span className="text-lg font-semibold tracking-tighter">
+                {logo.title}
+              </span>
             </Link>
             <Sheet>
               <SheetTrigger asChild>
@@ -172,11 +161,9 @@ const Navbar1 = ({
                 <SheetHeader>
                   <SheetTitle className="flex flex-row pr-7">
                     <Link href={logo.url} className="flex items-center gap-2">
-                      <img
-                        src={logo.src}
-                        className="max-h-8 dark:invert"
-                        alt={logo.alt}
-                      />
+                      <span className="text-lg font-semibold tracking-tighter">
+                        {logo.title}
+                      </span>
                     </Link>
                     <div className="grow"></div>
                     <NavbarAuth />
