@@ -51,6 +51,11 @@ export const createAuth = (
         },
       }),
     ],
+    account: {
+      accountLinking: {
+        allowDifferentEmails: true,
+      },
+    },
   });
 };
 
