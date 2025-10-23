@@ -40,16 +40,6 @@ interface Navbar1Props {
     title: string;
   };
   menu?: MenuItem[];
-  auth?: {
-    login: {
-      title: string;
-      url: string;
-    };
-    signup: {
-      title: string;
-      url: string;
-    };
-  };
 }
 
 const Navbar1 = ({
@@ -131,13 +121,9 @@ const Navbar1 = ({
       url: "#",
     },
   ],
-  auth = {
-    login: { title: "Login", url: "#" },
-    signup: { title: "Sign up", url: "#" },
-  },
 }: Navbar1Props) => {
   return (
-    <section className="py-4">
+    <section className="p-4">
       <div className="container mx-auto">
         {/* Desktop Menu */}
         <nav className="hidden justify-between lg:flex">
