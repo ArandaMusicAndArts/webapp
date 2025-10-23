@@ -5,6 +5,7 @@ import { DataModel } from "./_generated/dataModel";
 import { query } from "./_generated/server";
 import { betterAuth } from "better-auth";
 import { passkey } from "better-auth/plugins/passkey";
+import { emailOTP } from "better-auth/plugins";
 
 const siteUrl = process.env.SITE_URL!;
 
@@ -39,6 +40,17 @@ export const createAuth = (
       // The Convex plugin is required for Convex compatibility
       convex(),
       passkey(),
+      emailOTP({
+        async sendVerificationOTP({ email, otp, type }) {
+          if (type === "sign-in") {
+            console.log(`Sending OTP ${otp} to ${email}`);
+          } else if (type === "email-verification") {
+            console.log(`Sending OTP ${otp} to ${email}`);
+          } else {
+            console.log(`Sending OTP ${otp} to ${email}`);
+          }
+        },
+      }),
     ],
   });
 };
