@@ -8,12 +8,15 @@ import { Skeleton } from "./ui/skeleton";
 
 export function NavbarAuth() {
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 items-center">
       <AuthLoading>
         <Skeleton className="h-9 w-20"></Skeleton>
         <Skeleton className="h-9 w-16"></Skeleton>
       </AuthLoading>
       <Authenticated>
+        <Button variant="outline" asChild>
+          <Link href="/parent">Parent Dashboard</Link>
+        </Button>
         <UserButton size="icon" />
       </Authenticated>
       <Unauthenticated>
