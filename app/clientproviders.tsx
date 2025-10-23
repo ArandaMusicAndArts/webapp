@@ -32,6 +32,7 @@ export function ClientProviders({ children }: { children: ReactNode }) {
           authClient={authClient}
           navigate={router.push}
           replace={router.replace}
+          deleteUser
           onSessionChange={() => {
             // Clear router cache (protected routes)
             router.refresh();

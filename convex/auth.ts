@@ -56,6 +56,11 @@ export const createAuth = (
         allowDifferentEmails: true,
       },
     },
+    user: {
+      deleteUser: {
+        enabled: true,
+      },
+    },
   });
 };
 
