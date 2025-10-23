@@ -21,7 +21,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="border-b border-border bg-background sticky top-0">
+    <nav className="border-b border-border bg-background sticky top-0 z-50">
       <div className="mx-auto flex h-16 container items-center justify-left px-4 sm:px-6 lg:px-8 gap-6">
         {/* Logo */}
         <Link href="/" className="text-xl font-semibold text-foreground">
