@@ -1,7 +1,7 @@
 "use client";
 
-import { AuthLoading, UserButton } from "@daveyplate/better-auth-ui";
-import { Authenticated, Unauthenticated } from "convex/react";
+import { UserButton } from "@daveyplate/better-auth-ui";
+import { Authenticated, AuthLoading, Unauthenticated } from "convex/react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { Skeleton } from "./ui/skeleton";
