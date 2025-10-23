@@ -23,6 +23,7 @@ export const createAuth = (
     logger: {
       disabled: optionsOnly,
     },
+    trustedOrigins: ["*"], //TODO: REMOVE IN PROD
     baseURL: siteUrl,
     database: authComponent.adapter(ctx),
     // Configure simple, non-verified email/password to get started
@@ -41,12 +42,16 @@ export const createAuth = (
       passkey(),
       emailOTP({
         async sendVerificationOTP({ email, otp, type }) {
+          console.log(`Sending OTP ${otp} to ${email}`);
+          console.log(
+            `${siteUrl}/api/auth/verify-otp?email=${email}&otp=${otp}`,
+          );
           if (type === "sign-in") {
-            console.log(`Sending OTP ${otp} to ${email}`);
+            // console.log(`Sending OTP ${otp} to ${email}`);
           } else if (type === "email-verification") {
-            console.log(`Sending OTP ${otp} to ${email}`);
+            // console.log(`Sending OTP ${otp} to ${email}`);
           } else {
-            console.log(`Sending OTP ${otp} to ${email}`);
+            // console.log(`Sending OTP ${otp} to ${email}`);
           }
         },
       }),
