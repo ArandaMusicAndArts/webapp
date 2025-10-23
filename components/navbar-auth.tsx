@@ -5,7 +5,7 @@ import { Authenticated, Unauthenticated } from "convex/react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 
-export default function NavbarAuth() {
+export function NavbarAuth() {
   return (
     <div className="flex gap-2">
       <Authenticated>

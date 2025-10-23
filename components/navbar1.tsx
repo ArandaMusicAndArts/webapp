@@ -22,6 +22,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { NavbarAuth } from "./navbar-auth";
 
 interface MenuItem {
   title: string;
@@ -160,14 +161,7 @@ const Navbar1 = ({
               </NavigationMenu>
             </div>
           </div>
-          <div className="flex gap-2">
-            <Button asChild variant="outline" size="sm">
-              <a href={auth.login.url}>{auth.login.title}</a>
-            </Button>
-            <Button asChild size="sm">
-              <a href={auth.signup.url}>{auth.signup.title}</a>
-            </Button>
-          </div>
+          <NavbarAuth />
         </nav>
 
         {/* Mobile Menu */}
@@ -189,7 +183,7 @@ const Navbar1 = ({
               </SheetTrigger>
               <SheetContent className="overflow-y-auto">
                 <SheetHeader>
-                  <SheetTitle>
+                  <SheetTitle className="flex flex-row pr-7">
                     <a href={logo.url} className="flex items-center gap-2">
                       <img
                         src={logo.src}
@@ -197,6 +191,8 @@ const Navbar1 = ({
                         alt={logo.alt}
                       />
                     </a>
+                    <div className="grow"></div>
+                    <NavbarAuth />
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col gap-6 p-4">
@@ -207,15 +203,6 @@ const Navbar1 = ({
                   >
                     {menu.map((item) => renderMobileMenuItem(item))}
                   </Accordion>
-
-                  <div className="flex flex-col gap-3">
-                    <Button asChild variant="outline">
-                      <a href={auth.login.url}>{auth.login.title}</a>
-                    </Button>
-                    <Button asChild>
-                      <a href={auth.signup.url}>{auth.signup.title}</a>
-                    </Button>
-                  </div>
                 </div>
               </SheetContent>
             </Sheet>
