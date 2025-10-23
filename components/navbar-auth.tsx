@@ -21,7 +21,7 @@ export function NavbarAuth() {
           <Link href="/auth/sign-in">Login</Link>
         </Button>
         <Button asChild>
-          <Link href="/auth/sign-in">Enrol</Link>
+          <Link href="/auth/sign-in">Join Now</Link>
         </Button>
       </Unauthenticated>
     </div>
