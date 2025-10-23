@@ -22,7 +22,7 @@ export default function Navbar() {
 
   return (
     <nav className="border-b border-border bg-background sticky top-0">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-left px-4 sm:px-6 lg:px-8 gap-6">
+      <div className="mx-auto flex h-16 container items-center justify-left px-4 sm:px-6 lg:px-8 gap-6">
         {/* Logo */}
         <Link href="/" className="text-xl font-semibold text-foreground">
           AMA
