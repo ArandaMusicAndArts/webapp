@@ -7,6 +7,7 @@ import { ConvexBetterAuthProvider } from "@convex-dev/better-auth/react";
 import { useRouter } from "next/navigation";
 import { AuthUIProvider } from "@daveyplate/better-auth-ui";
 import Link from "next/link";
+import { ThemeProvider } from "next-themes";
 
 const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
 
@@ -15,24 +16,31 @@ export function ClientProviders({ children }: { children: ReactNode }) {
 
   return (
     <ConvexBetterAuthProvider client={convex} authClient={authClient}>
-      <AuthUIProvider
-        emailOTP={true}
-        passkey={true}
-        social={{ providers: ["google"] }}
-        credentials={false}
-        multiSession={false}
-        optimistic={true}
-        authClient={authClient}
-        navigate={router.push}
-        replace={router.replace}
-        onSessionChange={() => {
-          // Clear router cache (protected routes)
-          router.refresh();
-        }}
-        Link={Link}
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
       >
-        {children}
-      </AuthUIProvider>
+        <AuthUIProvider
+          emailOTP={true}
+          passkey={true}
+          social={{ providers: ["google"] }}
+          credentials={false}
+          multiSession={false}
+          optimistic={true}
+          authClient={authClient}
+          navigate={router.push}
+          replace={router.replace}
+          onSessionChange={() => {
+            // Clear router cache (protected routes)
+            router.refresh();
+          }}
+          Link={Link}
+        >
+          {children}
+        </AuthUIProvider>
+      </ThemeProvider>
     </ConvexBetterAuthProvider>
   );
 }
